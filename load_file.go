@@ -23,6 +23,9 @@ func ReadOrcJSON(r io.Reader) ([]Data, error) {
 		rd.UnreadRune()
 	}
 	err = json.NewDecoder(rd).Decode(&f)
+	for i := range f.Rms {
+		f.Rms[i].SailNo = NormalizeSailNo(f.Rms[i].SailNo)
+	}
 	return f.Rms, err
 }
 

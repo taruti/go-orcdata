@@ -3,7 +3,7 @@ package orcdata
 import "strings"
 
 type Data struct {
-	SailNo       string // Needs to be normalized
+	SailNo       string // Normalized on load from JSON.
 	YachtName    string
 	Class        string
 	LOA          float64
